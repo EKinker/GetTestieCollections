@@ -55,7 +55,30 @@ public class TestStack {
 
     @org.junit.Test
     public void testStackPeek(){
+        Stack<String> stack = new Stack<>();
+        int expectedStackSize = 3;
+        String expectedPeek = "for all the fish!";
 
+        stack.push("So long");
+        stack.push("and thanks");
+        stack.push(expectedPeek);
+        String actualPeek = stack.peek();
+
+        assertEquals(expectedPeek, actualPeek);
+        assertEquals(expectedStackSize, stack.size());
+    }
+
+    @org.junit.Test
+    public void testStackSearch(){
+        Stack<String> stack = new Stack<>();
+        stack.push("Arthur");
+        stack.push("Trillian");
+        stack.push("Ford");
+        int expected = 3;
+
+        int actual = stack.search("Arthur"); //counts down the stack
+
+        assertEquals(expected, actual);
     }
     // Make a bigger test exercising more Stack methods.....
 }
